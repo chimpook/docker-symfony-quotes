@@ -5,13 +5,13 @@ services:
   database:
     container_name: database
     image: mysql:${MYSQL_VERSION}
-    command: --default-authantication-plugin=mysql_native_password
+#    command: --default-authentication-plugin=mysql_native_password
     environment:
-      MYSQL_VERSION: ${MYSQL_VERSION}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_VERSION: '${MYSQL_VERSION}'
+      MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+      MYSQL_DATABASE: '${MYSQL_DATABASE}'
+      MYSQL_USER: '${MYSQL_USER}'
+      MYSQL_PASSWORD: '${MYSQL_PASSWORD}'
     ports:
       - "${MYSQL_PORT}:3306"
     volumes:
@@ -27,11 +27,11 @@ services:
         GIT_USER_NAME: ${GIT_USER_NAME}
         GIT_USER_EMAIL: ${GIT_USER_EMAIL}
     environment:
-      MYSQL_VERSION: ${MYSQL_VERSION}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_VERSION: '${MYSQL_VERSION}'
+      MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+      MYSQL_DATABASE: '${MYSQL_DATABASE}'
+      MYSQL_USER: '${MYSQL_USER}'
+      MYSQL_PASSWORD: '${MYSQL_PASSWORD}'
     ports:
       - "9000:9000"
     volumes:
