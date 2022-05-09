@@ -7,6 +7,7 @@ services:
     image: mysql:${MYSQL_VERSION}
     command: --default-authantication-plugin=mysql_native_password
     environment:
+      MYSQL_VERSION: ${MYSQL_VERSION}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
@@ -25,6 +26,12 @@ services:
         PHP_VERSION: ${PHP_VERSION}
         GIT_USER_NAME: ${GIT_USER_NAME}
         GIT_USER_EMAIL: ${GIT_USER_EMAIL}
+    environment:
+      MYSQL_VERSION: ${MYSQL_VERSION}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "9000:9000"
     volumes:
